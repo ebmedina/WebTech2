@@ -7,17 +7,112 @@
     --brown: #B05E27;
     --yellow-1: #D4AC2B;
     --yellow-2: #FFCE45;
-    --light:#F9E0AE;
-    --white: #FFFFFF;
-    --body: #FAF8F1;
+    --body:#F9E0AE;
+    --white-navbar: #FFFFFF;
+    --light: #FAF8F1;
 }
+
+html {scroll-behavior: smooth;}
 
 body{
     font-family: 'Oswald', sans-serif;
-    overflow-x: hidden;
-    /*background-color: var(--body);*/
+    line-height: 1.7;
+    background-color: var(--body);
 }
 
+h1,h2,h3,h4,h5,h6,
+.display-4 {
+    color: var(--light);
+    font-weight: 700;
+}
+
+
+a{
+    color: var(--light);
+    text-decoration: none;
+}
+
+.navbar .nav-link{
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.navbar-brand{
+    font-weight: 600;
+    font-size: 23px;
+    margin: 0px;
+}
+
+.btn{
+    padding: 14px 18px;
+    border-width: 2px;
+    border-radius: 0;
+}
+
+.hero {
+    background-image: url(../img/blackforest.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: 2;
+}
+
+.hero::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+section{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+/*Menu images*/
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column{
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+.column img{
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+@media screen and (max-width:800px){
+    .column{
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width:600px){
+    .column{
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+h4 {
+    text-align: center;
+    color: #682C0E;
+}
+#contact{
+    background-color: #B05E27;
+}
+/*
 .btn{
     border-radius: 8px;
 }
@@ -53,7 +148,7 @@ body{
 }
 
 
-/*NAVBAR*/
+/*NAVBAR
 .navbar .btn-outline-secondary{
     border: 1px solid var(--brown);
     color: var(--primary-dark);
@@ -63,7 +158,7 @@ body{
     padding: 10px 16px;
 }
 
-/*Custom container*/
+/*Custom container
 .container-custom{
     width: 100%;
     padding: 0 4rem;
@@ -86,7 +181,7 @@ body{
     color: var(--brown);
 }
 
-/*HERO*/
+/*HERO
 .hero{
     position:relative;
     height: 100vh;
@@ -129,6 +224,31 @@ body{
 .hero__content-width{
     max-width: 540px;
 }
+
+.hero__scroll-btn {
+    position:absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: var(--bs-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.hero__scroll-btn:hover{
+    color: var(--bs-light);
+    opacity: 0.8;
+}
+
+.hero__scroll-btn.bi {
+    transition-delay: 0.8s;
+    animation: bounce 1s infinite alternate;
+}
+
+
 /*
 a{
     text-decoration: none;
